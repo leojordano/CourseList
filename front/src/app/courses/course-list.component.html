@@ -17,8 +17,9 @@
             <th>Code</th>
             <th>Rating</th>
             <th>Date</th>
-            <th>description</th>
+            <!-- <th>description</th> -->
             <th>Options</th>
+            <th></th>
         </tr>
         
     </thead>
@@ -33,9 +34,10 @@
                 <app-star [rating]='course.rating'></app-star>
             </td>
             <td>{{ course.releaseDate | date: 'dd/MM/yyyy'}}</td>
-            <td>{{ course.description }}</td>
+            <!-- <td >{{ course.description }}</td> -->
             <td>
-                <a [routerLink]="['/courses/info', course.id]" class="btn btn-primary" >Edit</a>
+                <a [routerLink]="['/courses/info', course.id]" class="btn btn-primary mr-2" >Edit</a>
+                <button (click)="deleteById(course.id)" class="btn btn-danger">Delete</button>
             </td>
         </tr>
     </tbody>
